@@ -12,6 +12,9 @@ public class MyFirstProgram {
       "Площадь квадрата со стороной " + s.l + " = " + s.area()
     );
 
+    Point p = new Point(5, 14);
+    System.out.println(p.a + " f " + p.distance());
+
     Rectangle r = new Rectangle(4, 6);
     System.out.println(
       "Площадь прямоугольника со сторонами " +

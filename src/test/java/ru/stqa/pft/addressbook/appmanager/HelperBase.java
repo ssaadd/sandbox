@@ -2,6 +2,8 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.*;
 
+import java.sql.Struct;
+
 public class HelperBase {
     public boolean acceptNextAlert = true;
     protected WebDriver driver;
@@ -12,8 +14,13 @@ public class HelperBase {
 
     protected void type(By locator, String text) {
         click(locator);
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
+        if (text != null) {
+            String existingText = driver.findElement(locator).getAttribute("value");
+            if (!text.equals(existingText)){
+                driver.findElement(locator).clear();
+                driver.findElement(locator).sendKeys(text);
+            }
+        }
     }
 
     protected void click(By locator) {

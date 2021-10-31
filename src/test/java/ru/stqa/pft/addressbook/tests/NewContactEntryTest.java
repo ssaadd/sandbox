@@ -8,7 +8,7 @@ public class NewContactEntryTest extends TestBase{
     @Test
         public void testNewgroupcreate() throws Exception {
             app.getContactHelper().initAddNewContact();
-            app.getContactHelper().contactFormFill(new ContactData("name1", "lastname", "adress", "+79888880", "email@mail.ru"));
+            app.getContactHelper().contactFormFill(new ContactData("name1", "lastname", "adress", "+79888880", "email@mail.ru", "test1"), true);
             app.getContactHelper().submitNewContact();
             app.getContactHelper().returnHome();
         }

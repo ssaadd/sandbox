@@ -7,10 +7,10 @@ public class NewContactEntry extends TestBase{
 
     @Test
         public void testNewgroupcreate() throws Exception {
-            applicationManager.getContacrHelper().initAddNewContact();
-            applicationManager.getContacrHelper().contactFormFill(new ContactData("name1", "lastname", "adress", "+79888880", "email@mail.ru"));
-            applicationManager.getContacrHelper().submitNewContact();
-            applicationManager.getContacrHelper().returnHome();
+            app.getContactHelper().initAddNewContact();
+            app.getContactHelper().contactFormFill(new ContactData("name1", "lastname", "adress", "+79888880", "email@mail.ru"));
+            app.getContactHelper().submitNewContact();
+            app.getContactHelper().returnHome();
         }
 
 }

@@ -4,11 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.pft.addressbook.model.GroupData;
 
-public class GroupHelper {
-     private WebDriver driver;
+public class GroupHelper extends HelperBase{
 
     public GroupHelper(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void fillNewGroup(GroupData groupData) throws Exception {
@@ -17,22 +16,12 @@ public class GroupHelper {
         type(By.name("group_footer"), groupData.footer());
     }
 
-    private void type(By locator, String text) {
-        click(locator);
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
-    }
-
     public void returnGroupPage() {
         click(By.linkText("group page"));
     }
 
     public void submitGroupCreate() {
         click(By.name("submit"));
-    }
-
-    private void click(By locator) {
-        driver.findElement(locator).click();
     }
 
     public void initNewGroup() {

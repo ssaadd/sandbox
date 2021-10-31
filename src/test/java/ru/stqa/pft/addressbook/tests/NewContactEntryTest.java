@@ -6,11 +6,10 @@ import ru.stqa.pft.addressbook.model.ContactData;
 public class NewContactEntryTest extends TestBase{
 
     @Test
-        public void testNewgroupcreate() throws Exception {
-            app.getContactHelper().initAddNewContact();
-            app.getContactHelper().contactFormFill(new ContactData("name1", "lastname", "adress", "+79888880", "email@mail.ru", "test1"), true);
-            app.getContactHelper().submitNewContact();
-            app.getContactHelper().returnHome();
-        }
+        public void testNewContactCreate() throws Exception {
+        app.getContactHelper().createNewContact(new ContactData("name1", "lastname", "adress", "+79888880", "email@mail.ru", "test1"), true);
+    }
+
+
 
 }

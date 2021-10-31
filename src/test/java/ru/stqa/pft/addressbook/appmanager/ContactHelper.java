@@ -40,4 +40,22 @@ public class ContactHelper extends HelperBase{
     public void allertDec() {
         driver.switchTo().alert().accept();
     }
+
+    public void editContact() {
+        click(By.xpath("//img[@alt='Edit']"));
+    }
+
+    public void updateContact() {
+        click(By.xpath("//div[@id='content']/form/input[22]"));
+    }
+    public void contactFormModify(ContactData contactData) {
+        type(By.name("firstname"), contactData.name());
+        type(By.name("lastname"), contactData.lastname());
+        type(By.name("address"), contactData.address());
+        type(By.name("mobile"), contactData.phone());
+        type(By.name("email"), contactData.email());
+    }
+
+
+
 }

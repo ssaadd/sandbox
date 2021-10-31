@@ -30,4 +30,14 @@ public class ContactHelper extends HelperBase{
     public void returnHome() {
         click(By.linkText("home page"));
     }
+
+    public void selectContact() {
+        click(By.name("selected[]"));
+    }
+    public void deleteContact() {
+        click(By.xpath("//input[@value='Delete']"));
+    }
+    public void allertDec() {
+        driver.switchTo().alert().accept();
+    }
 }

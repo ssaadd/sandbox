@@ -1,8 +1,8 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.*;
+import ru.stqa.pft.addressbook.model.GroupData;
 
-import java.sql.Struct;
 
 public class HelperBase {
     public boolean acceptNextAlert = true;

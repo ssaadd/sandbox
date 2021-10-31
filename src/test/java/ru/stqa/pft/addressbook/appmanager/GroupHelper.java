@@ -29,7 +29,7 @@ public class GroupHelper extends HelperBase{
     }
 
     public void deleteSelectedGroup() {
-        click(By.xpath("//div[@id='content']/form/input[1]"));
+        click(By.name("delete"));
     }
 
     public void selectGroup() {
@@ -42,5 +42,16 @@ public class GroupHelper extends HelperBase{
 
     public void submitGroupModification() {
         click(By.name("update"));
+    }
+
+    public void createGroup(GroupData group) throws Exception {
+        initNewGroup();
+        fillNewGroup(group);
+        submitGroupCreate();
+        returnGroupPage();
+    }
+
+    public boolean isGroupPresent() {
+        return isElementPresent(By.name("selected[]"));
     }
 }

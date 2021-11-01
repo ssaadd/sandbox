@@ -35,7 +35,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void returnHome() {
-        click(By.linkText("home page"));
+        click(By.linkText("home"));
     }
 
     public void selectContact() {
@@ -69,5 +69,9 @@ public class ContactHelper extends HelperBase {
 
         return isElementPresent(By.name("selected[]"));
 
+    }
+
+    public int getContactCount() {
+        return driver.findElements(By.name("selected[]")).size();
     }
 }

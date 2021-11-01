@@ -12,10 +12,10 @@ public class DeleteContactEntryTest extends TestBase{
         if (! app.getContactHelper().isContactPresent()){
             app.getContactHelper().createNewContact(new ContactData("name2", "lastname2", "address", "+79888881", "email@mail.ru", "test1"), true);
         }
-        app.getContactHelper().selectContact();
+        app.getContactHelper().selectContact(before - 1);
         app.getContactHelper().deleteContact();
         app.getContactHelper().allertDec();
-        app.getContactHelper().returnHome();
+        app.getNavigationHelper().goToContactPage();
         int after = app.getContactHelper().getContactCount();
         Assert.assertEquals(after, before -1 );
     }

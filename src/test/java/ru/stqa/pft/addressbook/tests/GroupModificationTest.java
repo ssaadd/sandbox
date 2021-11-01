@@ -8,10 +8,10 @@ public class GroupModificationTest extends TestBase{
     @Test
     public void testGroupMod() throws Exception {
         app.getNavigationHelper().goToGroupPage();
-        int before = app.getGroupHelper().getGroupCount();
         if (! app.getGroupHelper().isGroupPresent()){
             app.getGroupHelper().createGroup(new GroupData("test_change", null, null));
         }
+        int before = app.getGroupHelper().getGroupCount();
         app.getGroupHelper().selectGroup(before -1);
         app.getGroupHelper().initGroupModification();
         app.getGroupHelper().fillNewGroup(new GroupData("test_change", "test_change2", "test_change3"));
